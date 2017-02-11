@@ -1,5 +1,8 @@
 package com.example.bill.myapplication;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -79,8 +82,37 @@ public class VirusActivity extends AppCompatActivity {
             mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
             mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
 
-            mAnswer = mQuestionLibrary.getAnswer(mQuestionNumber);
+            //mAnswer = mQuestionLibrary.getAnswer(mQuestionNumber);
             mQuestionNumber++;
+        }
+
+        public void clickQuit(View v){
+            finish();
+        }
+
+        @Override
+        public void onBackPressed(){
+            //exit application confirmation dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(VirusActivity.this);
+            builder.setMessage("Do you want to quit?");
+            builder.setCancelable(true);
+            builder.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
+                    finish();
+                }
+            });
+
+            builder.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+                 @Override
+                 public void onClick(DialogInterface dialog, int id) {
+                     dialog.cancel();
+                 }
+             });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+
         }
 
 

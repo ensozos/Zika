@@ -56,7 +56,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="quit"
+        android:text="Quit"
+        android:onClick="clickQuit"
         android:background="#B71C1C"
         android:textColor="#fff"
         android:padding="8dp"

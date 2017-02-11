@@ -1,8 +1,10 @@
 package com.example.bill.myapplication;
 
 
+import java.util.ArrayList;
 
 public class QuestionLibrary {
+
 
     private String mQuestions [] = {
             "What is your race?",
@@ -18,7 +20,7 @@ public class QuestionLibrary {
     };
 
 
-    private String mAnswers[]={"Conclusion1", "Conclusion2", "Conclusion3"};
+    private String mAnswers[]={" "};
 
     public String getQuestion(int a){
         String question = mQuestions[a];
